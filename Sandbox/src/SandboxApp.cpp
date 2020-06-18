@@ -1,6 +1,6 @@
 #include <Fresh.h>
 
-class SandboxApp : public Fresh::FreshApplication {
+class SandboxApp : public Fresh::Application {
 
 public:
 	SandboxApp() {}
@@ -8,6 +8,6 @@ public:
 	~SandboxApp() {}
 };
 
-Fresh::FreshApplication* Fresh::CreateApplication() {
+Fresh::Application* Fresh::CreateApplication() {
 	return new SandboxApp();
 }

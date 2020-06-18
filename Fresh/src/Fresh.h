@@ -1,4 +1,5 @@
 #pragma once
 
-#include "Fresh/FreshApplication.h"
+#include "Fresh/Application.h"
+#include "Fresh/Logger.h"
 #include "Fresh/EntryPoint.h"

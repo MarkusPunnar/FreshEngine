@@ -1,0 +1,3 @@
+[submodule "Fresh/vendor/spdlog"]
+	path = Fresh/vendor/spdlog
+	url = https://github.com/gabime/spdlog
