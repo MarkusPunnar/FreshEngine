@@ -1,3 +1,6 @@
 [submodule "Fresh/vendor/spdlog"]
 	path = Fresh/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Fresh/vendor/GLFW"]
+	path = Fresh/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

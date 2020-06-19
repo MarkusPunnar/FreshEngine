@@ -40,6 +40,10 @@ namespace Fresh {
 		int GetCategoryFlags() const override {
 			return CategoryWindow;
 		}
+
+		std::string ToString() const override {
+			return GetName();
+		}
 	};
 
 

@@ -1,5 +1,6 @@
 #pragma once
 
-#include "Fresh/Application.h"
-#include "Fresh/Logger.h"
-#include "Fresh/EntryPoint.h"
+#include "Fresh/Core/Application.h"
+#include "Fresh/Core/Logger.h"
+#include "Fresh/Core/EntryPoint.h"
+#include "Fresh/Core/Base.h"

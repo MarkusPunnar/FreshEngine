@@ -6,7 +6,16 @@ workspace "Fresh"
 		"Release"
 	}
 
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+includeDirs = {}
+includeDirs["GLFW"] = "Fresh/vendor/GLFW/include"
+
+group "dependencies"
+	include "Fresh/vendor/GLFW"
+
+group ""
 
 project "Fresh"
 	location "Fresh"
@@ -25,7 +34,18 @@ project "Fresh"
 
 	includedirs {
 		"%{prj.name}/vendor/spdlog/include",
+		"%{includeDirs.GLFW}",
 		"Fresh/src"
+	}
+
+	defines {
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

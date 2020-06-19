@@ -2,7 +2,7 @@
 
 #include "frpch.h"
 
-#include "Fresh/Core.h"
+#include "Fresh/Core/Base.h"
 
 namespace Fresh {
 
@@ -63,7 +63,7 @@ namespace Fresh {
 		template<typename T>
 		bool Dispatch(EventFn<T> callback) {
 			if (m_Event.GetEventType() == T::GetStaticType()) {
-				m_Event.m_Handled == callback(*(T*)&m_Event);
+				m_Event.m_Handled = callback(*(T*)&m_Event);
 				return true;
 			}
 			return false;

@@ -5,8 +5,8 @@
 extern Fresh::Application* Fresh::CreateApplication();
 
 int main(int argc, char* argv[]) {
-	auto app = Fresh::CreateApplication();
 	Fresh::Logger::Init();
+	auto app = Fresh::CreateApplication();
 	FR_CORE_INFO("Welcome to Fresh engine!");
 	app->Run();
 	delete app;
