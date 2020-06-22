@@ -22,6 +22,22 @@ namespace Fresh {
 
 	};
 
+	class KeyTypedEvent : public KeyEvent {
+
+	public:
+
+		KeyTypedEvent(int keyCode)
+			: KeyEvent(keyCode) {};
+
+		FR_EVENT_TYPE(KeyTyped);
+
+		std::string ToString() const override {
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+	};
+
 	class KeyPressedEvent : public KeyEvent {
 
 	public:

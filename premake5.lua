@@ -1,5 +1,6 @@
 workspace "Fresh"
 	architecture "x64"
+	startproject "Sandbox"
 	configurations 
 	{
 		"Debug", 
@@ -11,10 +12,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 includeDirs = {}
 includeDirs["GLFW"] = "Fresh/vendor/GLFW/include"
+includeDirs["Glad"] = "Fresh/vendor/Glad/include"
+includeDirs["ImGui"] = "Fresh/vendor/imgui"
 
 group "dependencies"
 	include "Fresh/vendor/GLFW"
-
+	include "Fresh/vendor/Glad"
+	include "Fresh/vendor/imgui"
 group ""
 
 project "Fresh"
@@ -35,6 +39,8 @@ project "Fresh"
 	includedirs {
 		"%{prj.name}/vendor/spdlog/include",
 		"%{includeDirs.GLFW}",
+		"%{includeDirs.Glad}",
+		"%{includeDirs.ImGui}",
 		"Fresh/src"
 	}
 
@@ -45,6 +51,8 @@ project "Fresh"
 
 	links {
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

@@ -9,8 +9,8 @@ namespace Fresh {
 	enum EventType {
 
 		None = 0,
-		KeyPressed, KeyReleased,
-		MouseButtonClicked, MouseButtonReleased, MouseScrolled, MouseMoved,
+		KeyPressed, KeyReleased, KeyTyped,
+		MouseButtonPressed, MouseButtonReleased, MouseScrolled, MouseMoved,
 		WindowResized, WindowClosed
 
 	};
@@ -34,6 +34,8 @@ namespace Fresh {
 
 	public:
 
+		bool isHandled = false;
+
 		virtual const EventType GetEventType() const = 0;
 		virtual int GetCategoryFlags() const = 0;
 		virtual const char* GetName() const = 0;
@@ -42,11 +44,6 @@ namespace Fresh {
 		inline bool IsInCategory(EventCategory category) {
 			return category & GetCategoryFlags();
 		}
-
-		friend class EventDispatcher;
-
-	protected:
-		bool m_Handled = false;
 	};
 
 
@@ -63,7 +60,7 @@ namespace Fresh {
 		template<typename T>
 		bool Dispatch(EventFn<T> callback) {
 			if (m_Event.GetEventType() == T::GetStaticType()) {
-				m_Event.m_Handled = callback(*(T*)&m_Event);
+				m_Event.isHandled = callback(*(T*)&m_Event);
 				return true;
 			}
 			return false;

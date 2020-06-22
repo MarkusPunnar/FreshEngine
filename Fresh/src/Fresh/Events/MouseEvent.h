@@ -74,18 +74,18 @@ namespace Fresh {
 		int m_Button;
 	};
 
-	class MouseButtonClickedEvent : public MouseButtonEvent {
+	class MouseButtonPressedEvent : public MouseButtonEvent {
 
 	public:
 
-		MouseButtonClickedEvent(int button)
+		MouseButtonPressedEvent(int button)
 			: MouseButtonEvent(button) {};
 
-		FR_EVENT_TYPE(MouseButtonClicked);
+		FR_EVENT_TYPE(MouseButtonPressed);
 
 		std::string ToString() const override {
 			std::stringstream ss;
-			ss << "MouseButtonClickedEvent: " << m_Button;
+			ss << "MouseButtonPressedEvent: " << m_Button;
 			return ss.str();
 		}
 	};

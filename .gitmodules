@@ -4,3 +4,6 @@
 [submodule "Fresh/vendor/GLFW"]
 	path = Fresh/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Fresh/vendor/imgui"]
+	path = Fresh/vendor/imgui
+	url = https://github.com/MarkusPunnar/imgui
