@@ -14,6 +14,7 @@ includeDirs = {}
 includeDirs["GLFW"] = "Fresh/vendor/GLFW/include"
 includeDirs["Glad"] = "Fresh/vendor/Glad/include"
 includeDirs["ImGui"] = "Fresh/vendor/imgui"
+includeDirs["glm"] = "Fresh/vendor/glm"
 
 group "dependencies"
 	include "Fresh/vendor/GLFW"
@@ -33,7 +34,9 @@ project "Fresh"
 
 	files { 
 		"%{prj.name}/src/**.h", 
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs {
@@ -41,6 +44,7 @@ project "Fresh"
 		"%{includeDirs.GLFW}",
 		"%{includeDirs.Glad}",
 		"%{includeDirs.ImGui}",
+		"%{includeDirs.glm}",
 		"Fresh/src"
 	}
 
@@ -101,6 +105,7 @@ project "Sandbox"
 
 	includedirs {
 		"%{wks.name}/vendor/spdlog/include",
+		"%{includeDirs.glm}",
 		"Fresh/src"
 	}
 

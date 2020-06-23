@@ -37,6 +37,7 @@ namespace Fresh {
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		unsigned int m_VertexArrayID, m_VertexBufferID, m_IndexBufferID;
 	};
 
 	Application* CreateApplication();

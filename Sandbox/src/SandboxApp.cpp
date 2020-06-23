@@ -1,25 +1,6 @@
 #include <Fresh.h>
 
-
-class TestLayer : public Fresh::Layer {
-
-	void OnUpdate() override {
-		
-	}
-
-	void OnEvent(Fresh::Event& e) override {
-		
-	}
-
-	void OnAttach() override {
-		
-	}
-
-	void OnDetach() override {
-		
-	}
-
-};
+#include "TestLayer.h"
 
 class SandboxApp : public Fresh::Application {
 
