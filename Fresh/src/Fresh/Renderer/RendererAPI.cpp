@@ -8,8 +8,7 @@ namespace Fresh {
 	RendererAPI::API RendererAPI::s_Api = RendererAPI::API::OpenGL;
 
 	std::unique_ptr<RendererAPI> RendererAPI::Create() {
-		switch (s_Api)
-		{
+		switch (s_Api) {
 		case Fresh::RendererAPI::API::None:
 			FR_CORE_ERROR("Renderer API of type None is not supported!");
 			return nullptr;

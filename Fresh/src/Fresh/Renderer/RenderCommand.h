@@ -24,8 +24,8 @@ namespace Fresh {
 			s_Api->Clear();
 		}
 
-		static void Draw() {
-			s_Api->Draw();
+		static void Draw(const std::shared_ptr<VertexArray>& vertexArray) {
+			s_Api->Draw(vertexArray);
 		}
 
 	private:

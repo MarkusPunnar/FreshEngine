@@ -10,4 +10,7 @@
 
 #include "Fresh/Debug/ImGuiLayer.h"
 
+
+#include "Fresh/Renderer/Renderer2D.h"
+
 #include "Fresh/Core/EntryPoint.h"

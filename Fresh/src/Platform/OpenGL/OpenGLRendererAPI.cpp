@@ -2,6 +2,8 @@
 
 #include "Platform/OpenGL/OpenGLRendererAPI.h"
 
+#include "Fresh/Renderer/VertexArray.h"
+
 #include <glad/glad.h>
 
 namespace Fresh {
@@ -22,7 +24,7 @@ namespace Fresh {
 		glClearColor(color.r, color.g, color.b, color.a);
 	}
 
-	void OpenGLRendererAPI::Draw() {
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, (void*)0);
+	void OpenGLRendererAPI::Draw(const std::shared_ptr<VertexArray>& vertexArray) {
+		glDrawElements(GL_TRIANGLES, vertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, (void*)0);
 	}
 }

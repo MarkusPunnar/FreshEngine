@@ -14,7 +14,7 @@ namespace Fresh {
 
 		void Clear() override;
 
-		void Draw() override;
+		void Draw(const std::shared_ptr<VertexArray>& vertexArray) override;
 
 	};
 

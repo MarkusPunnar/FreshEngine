@@ -25,8 +25,8 @@ namespace Fresh {
 
 	}
 
-	void Renderer2D::Submit() {
-		RenderCommand::Draw();
+	void Renderer2D::Submit(const std::shared_ptr<VertexArray>& vertexArray) {
+		RenderCommand::Draw(vertexArray);
 	}
 
 }
